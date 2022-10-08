@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/jason/VortexServer/build",
-  "command": "/usr/bin/clang++   -g -o CMakeFiles/VortexServer.dir/main.cpp.o -c /home/jason/VortexServer/main.cpp",
-  "file": "/home/jason/VortexServer/main.cpp"
-}
-]
