@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-10-09 09:53:27
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-10-09 21:15:17
+ * @LastEditTime: 2022-10-28 13:49:45
  * @FilePath: /VortexServer/code/buffer/buffer.h
  */
 
@@ -19,12 +19,13 @@
 
 using namespace std;
 
-class Buffer {
- public:
+class Buffer
+{
+public:
   Buffer(int initBufferSize = 1024);
   ~Buffer() = default;
 
- private:
+private:
   vector<char> buffer;
   atomic<size_t> readPos;
   atomic<size_t> writePos;
