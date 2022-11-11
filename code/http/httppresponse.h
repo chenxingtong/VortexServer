@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-11-09 11:32:27
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-09 11:34:42
+ * @LastEditTime: 2022-11-11 08:13:25
  * @FilePath: /VortexServer/code/http/httppresponse.h
  */
 #ifndef HTTPRESPONSE_H
@@ -19,6 +19,7 @@ using namespace std;
 
 class HttpResponse
 {
+public:
   HttpResponse();
   ~HttpResponse();
   void init();
