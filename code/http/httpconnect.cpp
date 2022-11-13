@@ -5,8 +5,7 @@
  * @FilePath: /VortexServer/code/http/httpconnect.cpp
  */
 #include "httpconnect.h"
-#include <atomic>
-#include <cassert>
+
 
 using namespace std;
 

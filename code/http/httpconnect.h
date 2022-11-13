@@ -1,13 +1,15 @@
 /*
  * @Date: 2022-11-10 00:00:49
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-11 15:56:42
+ * @LastEditTime: 2022-11-13 00:19:00
  * @FilePath: /VortexServer/code/http/httpconnect.h
  */
 #ifndef HTTPCONNECT_H
 #define HTTPCONNECT_H
 //#include <netinet/in.h>
 #include <arpa/inet.h>
+#include <atomic>
+#include <cassert>
 #include <stdlib.h>
 #include <sys/socket.h>
 
