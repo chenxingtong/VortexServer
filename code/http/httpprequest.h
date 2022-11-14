@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-11-10 00:02:16
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-13 05:57:26
+ * @LastEditTime: 2022-11-14 14:33:20
  * @FilePath: /VortexServer/code/http/httpprequest.h
  */
 #ifndef HTTPREQUEST_H
@@ -62,13 +62,21 @@ private:
   unordered_map<string, string> post;
   static const unordered_set<string> DEFAULT_HTML;
   static const unordered_map<string, int> DEFAULT_HTML_TAG;
+  unordered_map<string, string> fileInfo;
 
 private:
   //分析状态行
   HTTP_CODE parseRequestLine(const string& line);
+  void parsePath();   //分析行之解析地址
   //分析头
   HTTP_CODE parseHeader(const string& line);
-  HTTP_CODE parseBody(const string& line);
-  void parsePath();   //分析行之解析地址
+  //解析消息体
+  HTTP_CODE parseBody();
+
+private:
+  void parseFromUrlEncoded();   //解析消息体之解析urlEncoded类型数据
+  void parseFormData();
+  static int convertHex(char ch);   //转进制
+  static bool userVerify(const string& name, const string& pwd, bool isLogin);
 };
 #endif

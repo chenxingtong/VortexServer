@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-10-09 20:50:07
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-13 02:27:24
+ * @LastEditTime: 2022-11-14 08:44:57
  * @FilePath: /VortexServer/code/buffer/buffer.cpp
  */
 #include "buffer.h"
@@ -14,7 +14,8 @@ begin-read: prependable
 read-write: readable
 begin-end: writalbe
 */
-
+//可以将readPOs理解为分析函数的读取位置。writePos为内存的已读数据位置。
+//最开始的位置由beginPtr函数指定
 Buffer::Buffer(int initBuffSize) : buffer(initBuffSize), readPos(0), writePos(0) {}
 
 size_t Buffer::readableBytes() const
