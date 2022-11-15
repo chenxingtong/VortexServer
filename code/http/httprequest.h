@@ -1,19 +1,24 @@
 /*
  * @Date: 2022-11-10 00:02:16
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-14 14:33:20
+ * @LastEditTime: 2022-11-15 00:38:06
  * @FilePath: /VortexServer/code/http/httpprequest.h
  */
 #ifndef HTTPREQUEST_H
 #define HTTPREQUEST_H
+#include <algorithm>
 #include <cstddef>
+#include <dirent.h>
 #include <errno.h>
+#include <fstream>
 #include <jsoncpp/json/json.h>
+#include <jsoncpp/json/value.h>
 #include <mysql/mysql.h>
 #include <regex>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
+#include <vector>
 
 #include "../buffer/buffer.h"
 #include "../log/log.h"
