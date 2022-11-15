@@ -22,7 +22,7 @@ class SqlConnPool
 public:
   void init(const char* host, int port, const char* user, const char* pwd, const char* dbname,
             int maxConnCnt);
-  void destory();   //析构函数调用
+  void destroy();   //析构函数调用
   static SqlConnPool* instance();
 
 private:

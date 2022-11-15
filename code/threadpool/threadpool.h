@@ -1,17 +1,20 @@
-#ifndef THREADPOOL_H
-#define THREADPOOL_H
 /*
  * @Date: 2022-11-09 09:34:57
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-09 11:26:50
+ * @LastEditTime: 2022-11-15 04:31:27
  * @FilePath: /VortexServer/code/threadpool/threadpool.h
  */
-#include "../lock/locker.h"
+#ifndef THREADPOOL_H
+#define THREADPOOL_H
+
 #include <assert.h>
+
 #include <functional>
 #include <memory>
 #include <queue>
 #include <thread>
+
+#include "../lock/locker.h"
 
 using namespace std;
 
@@ -23,58 +26,76 @@ public:
     static ThreadPool threadpool;
     return &threadpool;
   }
-  void init(int threadNumber = 8, int maxRequests = 10000)
-  {
-    this->threadNumber = threadNumber;
-    this->maxRequests = maxRequests;
-    assert(threadNumber > 0);
-    //初始化后要做线程的分离
-    for (int i = 0; i < threadNumber; i++)
-    {
-      thread(callback, this).detach();
-    }
-  }
-  //添加回调函数
+
+  /* 回调函数：从线程池的任务队列中选一个任务处理 */
   static void callback(ThreadPool* pool)
   {
     while (true)
     {
       pool->mtxPool.lock();
-      //此处需要function<void>
-      // 如果列表为空且未停止，先阻塞。
       while (pool->tasks.empty() && !pool->shutdown)
       {
-        pool->condNoempty.wait(pool->mtxPool.get());
+        pool->condNotEmpty.wait(pool->mtxPool.get());
       }
+
       if (pool->shutdown)
       {
         pool->mtxPool.unlock();
         break;
       }
+
+      //函数指针需要用move变成右值
       auto task = move(pool->tasks.front());
       pool->tasks.pop();
       pool->mtxPool.unlock();
-      task();
+      task();   //这里是用bind打包好的函数及其参数，可直接执行
     }
   }
 
+  void init(int threadNum = 8, int maxRequests = 10000)
+  {
+    this->threadNum = threadNum;
+    this->maxRequests = maxRequests;
+    assert(threadNum > 0);
+    //初始化时开辟所有线程，无任务就阻塞
+    for (int i = 0; i < threadNum; i++)
+    {
+      //线程分离，主线程不用负责回收子线程资源
+      thread(callback, this).detach();
+    }
+  }
+
+  /* 添加任务 */
+  //传入方法和参数打包后的函数对象，&&表示右值引用
+  template<typename F> void addTask(F&& task)
+  {
+    mtxPool.lock();
+    if ((int)tasks.size() < maxRequests)
+    {
+      //利用forward进行完美转发，保持右值引用属性
+      tasks.emplace(forward<F>(task));
+      condNotEmpty.signal();
+    }
+    mtxPool.unlock();
+  }
+
 private:
+  mtx mtxPool;
+  cond condNotEmpty;
+  int threadNum;
+  int maxRequests;
+  bool shutdown;
+  // function<void>可代替函数指针，可用bind将函数指针与参数绑定
+  queue<function<void()>> tasks;
+
   ThreadPool() {}
   ~ThreadPool()
   {
     mtxPool.lock();
-    shutdown = true;
+    shutdown = true;   //诱导子线程自己销毁
     mtxPool.unlock();
-    condNoempty.broadcast();
+    condNotEmpty.broadcast();
   }
-
-private:
-  int threadNumber;
-  int maxRequests;
-  mtx mtxPool;
-  //函数指针 task是queue，调用queue函数
-  queue<function<void()>> tasks;
-  bool shutdown;
-  cond condNoempty;
 };
+
 #endif

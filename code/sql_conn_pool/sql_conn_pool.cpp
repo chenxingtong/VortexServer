@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-11-07 14:48:03
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-07 16:29:46
+ * @LastEditTime: 2022-11-15 04:34:22
  * @FilePath: /VortexServer/code/sql_conn_pool/sql_conn_pool.cpp
  */
 #include "sql_conn_pool.h"
@@ -53,7 +53,7 @@ void SqlConnPool::init(const char* host, int port, const char* user, const char*
 }
 //析构函数的实现
 
-void SqlConnPool::destory()
+void SqlConnPool::destroy()
 {
   this->mtxPool->lock();
   //关闭链接
@@ -70,7 +70,7 @@ void SqlConnPool::destory()
 }
 SqlConnPool ::~SqlConnPool()
 {
-  this->destory();
+  this->destroy();
 }
 
 MYSQL* SqlConnPool::getConn()
