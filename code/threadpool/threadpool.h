@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-11-09 09:34:57
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-15 04:31:27
+ * @LastEditTime: 2022-11-16 11:16:23
  * @FilePath: /VortexServer/code/threadpool/threadpool.h
  */
 #ifndef THREADPOOL_H
@@ -94,7 +94,7 @@ private:
     mtxPool.lock();
     shutdown = true;   //诱导子线程自己销毁
     mtxPool.unlock();
-    condNotEmpty.broadcast();
+    condNotEmpty.broadcast();   //唤醒
   }
 };
 

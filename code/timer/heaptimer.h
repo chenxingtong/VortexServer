@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-11-15 01:21:08
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-15 02:16:52
+ * @LastEditTime: 2022-11-16 10:27:38
  * @FilePath: /VortexServer/code/timer/heaptimer.h
  */
 #ifndef HEAPTIMER_H
@@ -24,7 +24,7 @@ typedef Clock::time_point TimeStamp;
 struct TimerNode
 {
   int id;               //连接套接字描述符
-  TimeStamp expires;    //到期时间
+  TimeStamp expires;    //到期时间，TimeStamp时间戳类
   TimeoutCallBack cb;   //回调函数
   //重载<，到期时间近的排在前面
   bool operator<(const TimerNode& t) { return expires < t.expires; }
@@ -34,7 +34,7 @@ struct TimerNode
 class HeapTimer
 {
 public:
-  // reserve增加capacity，不改变size
+  // vector初始化空间：reserve
   HeapTimer() { heap.reserve(64); }
 
   ~HeapTimer() { clear(); }
@@ -70,6 +70,6 @@ private:
   std::vector<TimerNode> heap;
 
   //记录每个定时器的下标
-  std::unordered_map<int, size_t> ref;
+  std::unordered_map<int, size_t> ref;   //无序容器map
 };
 #endif
