@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-10-09 20:50:07
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-14 08:44:57
+ * @LastEditTime: 2022-11-24 15:34:12
  * @FilePath: /VortexServer/code/buffer/buffer.cpp
  */
 #include "buffer.h"
@@ -58,7 +58,7 @@ void Buffer::retrieveAll()
   readPos = 0;
   writePos = 0;
 }
-
+//全部找回
 string Buffer::retrieveAllToStr()
 {
   string str(peek(), readableBytes());
