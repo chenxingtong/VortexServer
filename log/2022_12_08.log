@@ -1,0 +1,280 @@
+2022-12-08 08:13:20.305316 [info] : ========== Server init ==========
+2022-12-08 08:13:20.305346 [info] : Port:9006, OpenLinger: false
+2022-12-08 08:13:20.305435 [info] : Listen Mode: ET, OpenConn Mode: ET
+2022-12-08 08:13:20.305992 [info] : LogSys level: 1
+2022-12-08 08:13:20.306170 [info] : srcDir: /home/jason/VortexServer/resources/
+2022-12-08 08:13:20.306330 [info] : SqlConnPool num: 12, ThreadPool num: 6
+2022-12-08 08:18:44.939337 [info] : ========== Server init ==========
+2022-12-08 08:18:44.939364 [info] : Port:9006, OpenLinger: false
+2022-12-08 08:18:44.939437 [info] : Listen Mode: ET, OpenConn Mode: ET
+2022-12-08 08:18:44.939570 [info] : LogSys level: 1
+2022-12-08 08:18:44.939668 [info] : srcDir: /home/jason/VortexServer/resources/
+2022-12-08 08:19:36.868379 [info] : ========== Server init ==========
+2022-12-08 08:19:36.868523 [info] : Port:9006, OpenLinger: false
+2022-12-08 08:19:36.868532 [info] : Listen Mode: ET, OpenConn Mode: ET
+2022-12-08 08:19:36.868658 [info] : LogSys level: 1
+2022-12-08 08:19:36.868666 [info] : srcDir: /home/jason/VortexServer/resources/
+2022-12-08 08:19:36.868669 [info] : SqlConnPool num: 12, ThreadPool num: 6
+2022-12-08 08:32:32.022230 [info] : ========== Server init ==========
+2022-12-08 08:32:32.022259 [info] : Port:9006, OpenLinger: false
+2022-12-08 08:32:32.022338 [info] : Listen Mode: ET, OpenConn Mode: ET
+2022-12-08 08:32:32.022522 [info] : LogSys level: 1
+2022-12-08 08:32:32.022637 [info] : srcDir: /home/jason/VortexServer/resources/
+2022-12-08 08:32:32.022753 [info] : SqlConnPool num: 12, ThreadPool num: 6
+2022-12-08 08:32:32.022863 [info] : ========= Server start =========
+2022-12-08 08:32:52.861427 [info] : Client[6](127.0.0.1:4238) in, userCount:1
+2022-12-08 08:32:52.861541 [info] : Client[6] in!
+2022-12-08 08:32:52.862819 [info] : Client[6] quit!
+2022-12-08 08:32:52.862960 [info] : Client[6](127.0.0.1:4238) quit, UserCount:0
+2022-12-08 08:32:53.182760 [info] : Client[6](127.0.0.1:5262) in, userCount:1
+2022-12-08 08:32:53.182899 [info] : Client[6] in!
+2022-12-08 08:32:53.184122 [info] : Client[6] quit!
+2022-12-08 08:32:53.184270 [info] : Client[6](127.0.0.1:5262) quit, UserCount:0
+2022-12-08 08:32:54.242955 [info] : Client[6](127.0.0.1:6286) in, userCount:1
+2022-12-08 08:32:54.243020 [info] : Client[6] in!
+2022-12-08 08:32:54.244019 [info] : Client[6] quit!
+2022-12-08 08:32:54.244442 [info] : Client[6](127.0.0.1:6286) quit, UserCount:0
+2022-12-08 08:32:54.381994 [info] : Client[6](127.0.0.1:7310) in, userCount:1
+2022-12-08 08:32:54.382071 [info] : Client[6] in!
+2022-12-08 08:32:54.383058 [info] : Client[6] quit!
+2022-12-08 08:32:54.383122 [info] : Client[6](127.0.0.1:7310) quit, UserCount:0
+2022-12-08 08:32:54.473036 [info] : Client[6](127.0.0.1:8334) in, userCount:1
+2022-12-08 08:32:54.473122 [info] : Client[6] in!
+2022-12-08 08:32:54.474065 [info] : Client[6] quit!
+2022-12-08 08:32:54.474243 [info] : Client[6](127.0.0.1:8334) quit, UserCount:0
+2022-12-08 08:32:54.558531 [info] : Client[6](127.0.0.1:9358) in, userCount:1
+2022-12-08 08:32:54.558606 [info] : Client[6] in!
+2022-12-08 08:32:54.559608 [info] : Client[6] quit!
+2022-12-08 08:32:54.559654 [info] : Client[6](127.0.0.1:9358) quit, UserCount:0
+2022-12-08 08:32:54.610873 [info] : Client[6](127.0.0.1:10382) in, userCount:1
+2022-12-08 08:32:54.611108 [info] : Client[6] in!
+2022-12-08 08:32:54.613853 [info] : Client[6] quit!
+2022-12-08 08:32:54.613953 [info] : Client[6](127.0.0.1:10382) quit, UserCount:0
+2022-12-08 08:32:54.737773 [info] : Client[6](127.0.0.1:11406) in, userCount:1
+2022-12-08 08:32:54.737909 [info] : Client[6] in!
+2022-12-08 08:32:54.739057 [info] : Client[6] quit!
+2022-12-08 08:32:54.739278 [info] : Client[6](127.0.0.1:11406) quit, UserCount:0
+2022-12-08 08:32:55.483326 [info] : Client[6](127.0.0.1:12430) in, userCount:1
+2022-12-08 08:32:55.483474 [info] : Client[6] in!
+2022-12-08 08:32:55.484616 [info] : Client[6] quit!
+2022-12-08 08:32:55.484733 [info] : Client[6](127.0.0.1:12430) quit, UserCount:0
+2022-12-08 08:32:55.666353 [info] : Client[6](127.0.0.1:13454) in, userCount:1
+2022-12-08 08:32:55.666420 [info] : Client[6] in!
+2022-12-08 08:32:55.667560 [info] : Client[6] quit!
+2022-12-08 08:32:55.667633 [info] : Client[6](127.0.0.1:13454) quit, UserCount:0
+2022-12-08 08:32:55.838242 [info] : Client[6](127.0.0.1:14478) in, userCount:1
+2022-12-08 08:32:55.838288 [info] : Client[6] in!
+2022-12-08 08:32:55.841686 [info] : Client[6] quit!
+2022-12-08 08:32:55.841755 [info] : Client[6](127.0.0.1:14478) quit, UserCount:0
+2022-12-08 08:32:55.937726 [info] : Client[6](127.0.0.1:15502) in, userCount:1
+2022-12-08 08:32:55.937773 [info] : Client[6] in!
+2022-12-08 08:32:55.941452 [info] : Client[6] quit!
+2022-12-08 08:32:55.941673 [info] : Client[6](127.0.0.1:15502) quit, UserCount:0
+2022-12-08 08:32:55.991372 [info] : Client[6](127.0.0.1:16526) in, userCount:1
+2022-12-08 08:32:55.991525 [info] : Client[6] in!
+2022-12-08 08:32:55.992841 [info] : Client[6] quit!
+2022-12-08 08:32:55.992913 [info] : Client[6](127.0.0.1:16526) quit, UserCount:0
+2022-12-08 08:32:56.058481 [info] : Client[6](127.0.0.1:17550) in, userCount:1
+2022-12-08 08:32:56.058603 [info] : Client[6] in!
+2022-12-08 08:32:56.059573 [info] : Client[6] quit!
+2022-12-08 08:32:56.059707 [info] : Client[6](127.0.0.1:17550) quit, UserCount:0
+2022-12-08 08:32:57.218613 [info] : Client[6](127.0.0.1:18574) in, userCount:1
+2022-12-08 08:32:57.218771 [info] : Client[6] in!
+2022-12-08 08:32:57.219855 [info] : Client[6] quit!
+2022-12-08 08:32:57.219947 [info] : Client[6](127.0.0.1:18574) quit, UserCount:0
+2022-12-08 08:32:57.459121 [info] : Client[6](127.0.0.1:19598) in, userCount:1
+2022-12-08 08:32:57.459219 [info] : Client[6] in!
+2022-12-08 08:33:02.883079 [info] : Client[6] quit!
+2022-12-08 08:33:02.883213 [info] : Client[6](127.0.0.1:19598) quit, UserCount:0
+2022-12-08 08:33:04.134189 [info] : Client[6](127.0.0.1:20622) in, userCount:1
+2022-12-08 08:33:04.134257 [info] : Client[6] in!
+2022-12-08 08:33:04.135517 [info] : Client[6] quit!
+2022-12-08 08:33:04.135620 [info] : Client[6](127.0.0.1:20622) quit, UserCount:0
+2022-12-08 08:33:04.230872 [info] : Client[6](127.0.0.1:21646) in, userCount:1
+2022-12-08 08:33:04.231104 [info] : Client[6] in!
+2022-12-08 08:33:04.375667 [info] : Client[7](127.0.0.1:22670) in, userCount:2
+2022-12-08 08:33:04.375764 [info] : Client[7] in!
+2022-12-08 08:33:04.377550 [info] : Client[6] quit!
+2022-12-08 08:33:04.377613 [info] : Client[6](127.0.0.1:21646) quit, UserCount:1
+2022-12-08 08:33:04.377641 [info] : Client[7] quit!
+2022-12-08 08:33:04.377666 [info] : Client[7](127.0.0.1:22670) quit, UserCount:0
+2022-12-08 08:33:04.425612 [info] : Client[6](127.0.0.1:23694) in, userCount:1
+2022-12-08 08:33:04.425682 [info] : Client[6] in!
+2022-12-08 08:33:04.426747 [info] : Client[6] quit!
+2022-12-08 08:33:04.426905 [info] : Client[6](127.0.0.1:23694) quit, UserCount:0
+2022-12-08 08:33:04.607675 [info] : Client[6](127.0.0.1:25230) in, userCount:1
+2022-12-08 08:33:04.607739 [info] : Client[6] in!
+2022-12-08 08:33:04.608713 [info] : Client[6] quit!
+2022-12-08 08:33:04.608782 [info] : Client[6](127.0.0.1:25230) quit, UserCount:0
+2022-12-08 08:33:04.619067 [info] : Client[6](127.0.0.1:25742) in, userCount:1
+2022-12-08 08:33:04.619132 [info] : Client[6] in!
+2022-12-08 08:33:04.620981 [info] : Client[6] quit!
+2022-12-08 08:33:04.621091 [info] : Client[6](127.0.0.1:25742) quit, UserCount:0
+2022-12-08 08:33:05.194978 [info] : Client[6](127.0.0.1:26766) in, userCount:1
+2022-12-08 08:33:05.195123 [info] : Client[6] in!
+2022-12-08 08:33:05.196178 [info] : Client[6] quit!
+2022-12-08 08:33:05.196290 [info] : Client[6](127.0.0.1:26766) quit, UserCount:0
+2022-12-08 08:33:05.800502 [info] : Client[6](127.0.0.1:27790) in, userCount:1
+2022-12-08 08:33:05.800600 [info] : Client[6] in!
+2022-12-08 08:33:05.801666 [info] : Client[6] quit!
+2022-12-08 08:33:05.801730 [info] : Client[6](127.0.0.1:27790) quit, UserCount:0
+2022-12-08 08:33:05.898550 [info] : Client[6](127.0.0.1:28814) in, userCount:1
+2022-12-08 08:33:05.898687 [info] : Client[6] in!
+2022-12-08 08:33:05.899799 [info] : Client[6] quit!
+2022-12-08 08:33:05.899913 [info] : Client[6](127.0.0.1:28814) quit, UserCount:0
+2022-12-08 08:33:06.004396 [info] : Client[6](127.0.0.1:29838) in, userCount:1
+2022-12-08 08:33:06.004471 [info] : Client[6] in!
+2022-12-08 08:33:06.006677 [info] : Client[6] quit!
+2022-12-08 08:33:06.006829 [info] : Client[6](127.0.0.1:29838) quit, UserCount:0
+2022-12-08 08:33:06.080302 [info] : Client[6](127.0.0.1:30862) in, userCount:1
+2022-12-08 08:33:06.080372 [info] : Client[6] in!
+2022-12-08 08:33:06.081351 [info] : Client[6] quit!
+2022-12-08 08:33:06.081428 [info] : Client[6](127.0.0.1:30862) quit, UserCount:0
+2022-12-08 08:33:06.238665 [info] : Client[6](127.0.0.1:31886) in, userCount:1
+2022-12-08 08:33:06.238716 [info] : Client[6] in!
+2022-12-08 08:33:06.239914 [info] : Client[6] quit!
+2022-12-08 08:33:06.239990 [info] : Client[6](127.0.0.1:31886) quit, UserCount:0
+2022-12-08 08:33:06.296277 [info] : Client[6](127.0.0.1:32910) in, userCount:1
+2022-12-08 08:33:06.296366 [info] : Client[6] in!
+2022-12-08 08:33:06.297669 [info] : Client[6] quit!
+2022-12-08 08:33:06.297703 [info] : Client[6](127.0.0.1:32910) quit, UserCount:0
+2022-12-08 08:33:06.752213 [info] : Client[6](127.0.0.1:33934) in, userCount:1
+2022-12-08 08:33:06.752352 [info] : Client[6] in!
+2022-12-08 08:33:06.753348 [info] : Client[6] quit!
+2022-12-08 08:33:06.753470 [info] : Client[6](127.0.0.1:33934) quit, UserCount:0
+2022-12-08 08:33:06.992403 [info] : Client[6](127.0.0.1:34958) in, userCount:1
+2022-12-08 08:33:06.992544 [info] : Client[6] in!
+2022-12-08 08:33:06.993609 [info] : Client[6] quit!
+2022-12-08 08:33:06.993732 [info] : Client[6](127.0.0.1:34958) quit, UserCount:0
+2022-12-08 08:33:07.184347 [info] : Client[6](127.0.0.1:35982) in, userCount:1
+2022-12-08 08:33:07.184415 [info] : Client[6] in!
+2022-12-08 08:33:07.185352 [info] : Client[6] quit!
+2022-12-08 08:33:07.185432 [info] : Client[6](127.0.0.1:35982) quit, UserCount:0
+2022-12-08 08:33:07.257373 [info] : Client[6](127.0.0.1:37006) in, userCount:1
+2022-12-08 08:33:07.257445 [info] : Client[6] in!
+2022-12-08 08:33:07.258382 [info] : Client[6] quit!
+2022-12-08 08:33:07.258434 [info] : Client[6](127.0.0.1:37006) quit, UserCount:0
+2022-12-08 08:33:07.315540 [info] : Client[6](127.0.0.1:38030) in, userCount:1
+2022-12-08 08:33:07.315593 [info] : Client[6] in!
+2022-12-08 08:33:07.316686 [info] : Client[6] quit!
+2022-12-08 08:33:07.316776 [info] : Client[6](127.0.0.1:38030) quit, UserCount:0
+2022-12-08 08:33:26.644440 [info] : Client[6](127.0.0.1:39054) in, userCount:1
+2022-12-08 08:33:26.644549 [info] : Client[6] in!
+2022-12-08 08:33:26.645884 [info] : Client[6] quit!
+2022-12-08 08:33:26.645939 [info] : Client[6](127.0.0.1:39054) quit, UserCount:0
+2022-12-08 08:33:27.041227 [info] : Client[6](127.0.0.1:40078) in, userCount:1
+2022-12-08 08:33:27.041340 [info] : Client[6] in!
+2022-12-08 08:33:27.042501 [info] : Client[6] quit!
+2022-12-08 08:33:27.042612 [info] : Client[6](127.0.0.1:40078) quit, UserCount:0
+2022-12-08 08:33:27.749179 [info] : Client[6](127.0.0.1:41102) in, userCount:1
+2022-12-08 08:33:27.749327 [info] : Client[6] in!
+2022-12-08 08:33:27.750444 [info] : Client[6] quit!
+2022-12-08 08:33:27.750582 [info] : Client[6](127.0.0.1:41102) quit, UserCount:0
+2022-12-08 08:33:27.880051 [info] : Client[6](127.0.0.1:42126) in, userCount:1
+2022-12-08 08:33:27.880098 [info] : Client[6] in!
+2022-12-08 08:33:27.886381 [info] : Client[6] quit!
+2022-12-08 08:33:27.886443 [info] : Client[6](127.0.0.1:42126) quit, UserCount:0
+2022-12-08 08:33:27.955273 [info] : Client[6](127.0.0.1:43150) in, userCount:1
+2022-12-08 08:33:27.955323 [info] : Client[6] in!
+2022-12-08 08:33:27.956468 [info] : Client[6] quit!
+2022-12-08 08:33:27.956515 [info] : Client[6](127.0.0.1:43150) quit, UserCount:0
+2022-12-08 08:33:28.003819 [info] : Client[6](127.0.0.1:44174) in, userCount:1
+2022-12-08 08:33:28.003925 [info] : Client[6] in!
+2022-12-08 08:33:28.005024 [info] : Client[6] quit!
+2022-12-08 08:33:28.005107 [info] : Client[6](127.0.0.1:44174) quit, UserCount:0
+2022-12-08 08:33:28.100390 [info] : Client[6](127.0.0.1:45198) in, userCount:1
+2022-12-08 08:33:28.100434 [info] : Client[6] in!
+2022-12-08 08:33:28.104801 [info] : Client[6] quit!
+2022-12-08 08:33:28.105012 [info] : Client[6](127.0.0.1:45198) quit, UserCount:0
+2022-12-08 08:33:28.249567 [info] : Client[6](127.0.0.1:46222) in, userCount:1
+2022-12-08 08:33:28.249728 [info] : Client[6] in!
+2022-12-08 08:33:28.250860 [info] : Client[6] quit!
+2022-12-08 08:33:28.250959 [info] : Client[6](127.0.0.1:46222) quit, UserCount:0
+2022-12-08 08:33:28.863677 [info] : Client[6](127.0.0.1:47246) in, userCount:1
+2022-12-08 08:33:28.863815 [info] : Client[6] in!
+2022-12-08 08:33:28.864872 [info] : Client[6] quit!
+2022-12-08 08:33:28.864976 [info] : Client[6](127.0.0.1:47246) quit, UserCount:0
+2022-12-08 08:33:29.215210 [info] : Client[6](127.0.0.1:48270) in, userCount:1
+2022-12-08 08:33:29.215280 [info] : Client[6] in!
+2022-12-08 08:33:29.216262 [info] : Client[6] quit!
+2022-12-08 08:33:29.216341 [info] : Client[6](127.0.0.1:48270) quit, UserCount:0
+2022-12-08 08:33:29.500679 [info] : Client[6](127.0.0.1:49294) in, userCount:1
+2022-12-08 08:33:29.500769 [info] : Client[6] in!
+2022-12-08 08:33:29.501947 [info] : Client[6] quit!
+2022-12-08 08:33:29.502010 [info] : Client[6](127.0.0.1:49294) quit, UserCount:0
+2022-12-08 08:33:29.549683 [info] : Client[6](127.0.0.1:50318) in, userCount:1
+2022-12-08 08:33:29.549862 [info] : Client[6] in!
+2022-12-08 08:33:29.551668 [info] : Client[6] quit!
+2022-12-08 08:33:29.551827 [info] : Client[6](127.0.0.1:50318) quit, UserCount:0
+2022-12-08 08:33:29.732468 [info] : Client[6](127.0.0.1:51342) in, userCount:1
+2022-12-08 08:33:29.732994 [info] : Client[6] in!
+2022-12-08 08:33:29.734290 [info] : Client[6] quit!
+2022-12-08 08:33:29.734376 [info] : Client[6](127.0.0.1:51342) quit, UserCount:0
+2022-12-08 08:33:29.815837 [info] : Client[6](127.0.0.1:52366) in, userCount:1
+2022-12-08 08:33:29.815993 [info] : Client[6] in!
+2022-12-08 08:33:29.816998 [info] : Client[6] quit!
+2022-12-08 08:33:29.817181 [info] : Client[6](127.0.0.1:52366) quit, UserCount:0
+2022-12-08 08:33:29.951981 [info] : Client[6](127.0.0.1:53390) in, userCount:1
+2022-12-08 08:33:29.952147 [info] : Client[6] in!
+2022-12-08 08:33:30.352058 [info] : Client[7](127.0.0.1:54414) in, userCount:2
+2022-12-08 08:33:30.352130 [info] : Client[7] in!
+2022-12-08 08:33:45.558985 [info] : Client[6] quit!
+2022-12-08 08:33:45.560066 [info] : Client[6](127.0.0.1:53390) quit, UserCount:1
+2022-12-08 08:34:30.459817 [info] : Client[6] quit!
+2022-12-08 08:34:30.532458 [info] : Client[7] quit!
+2022-12-08 08:34:30.533212 [info] : Client[7](127.0.0.1:54414) quit, UserCount:0
+2022-12-08 10:48:12.608507 [info] : Client[6](127.0.0.1:46735) in, userCount:1
+2022-12-08 10:48:12.608661 [info] : Client[6] in!
+2022-12-08 10:48:12.609930 [info] : Client[6] quit!
+2022-12-08 10:48:12.610069 [info] : Client[6](127.0.0.1:46735) quit, UserCount:0
+2022-12-08 10:48:12.947974 [info] : Client[6](127.0.0.1:47759) in, userCount:1
+2022-12-08 10:48:12.948233 [info] : Client[6] in!
+2022-12-08 10:48:12.949517 [info] : Client[6] quit!
+2022-12-08 10:48:12.949588 [info] : Client[6](127.0.0.1:47759) quit, UserCount:0
+2022-12-08 10:48:14.118902 [info] : Client[6](127.0.0.1:48783) in, userCount:1
+2022-12-08 10:48:14.118996 [info] : Client[6] in!
+2022-12-08 10:48:14.119934 [info] : Client[6] quit!
+2022-12-08 10:48:14.119980 [info] : Client[6](127.0.0.1:48783) quit, UserCount:0
+2022-12-08 10:48:14.205550 [info] : Client[6](127.0.0.1:49807) in, userCount:1
+2022-12-08 10:48:14.205680 [info] : Client[6] in!
+2022-12-08 10:48:14.206605 [info] : Client[6] quit!
+2022-12-08 10:48:14.206731 [info] : Client[6](127.0.0.1:49807) quit, UserCount:0
+2022-12-08 10:48:14.297448 [info] : Client[6](127.0.0.1:50831) in, userCount:1
+2022-12-08 10:48:14.297585 [info] : Client[6] in!
+2022-12-08 10:48:14.299510 [info] : Client[6] quit!
+2022-12-08 10:48:14.299588 [info] : Client[6](127.0.0.1:50831) quit, UserCount:0
+2022-12-08 10:48:14.376088 [info] : Client[6](127.0.0.1:51855) in, userCount:1
+2022-12-08 10:48:14.376180 [info] : Client[6] in!
+2022-12-08 10:48:14.380680 [info] : Client[6] quit!
+2022-12-08 10:48:14.380768 [info] : Client[6](127.0.0.1:51855) quit, UserCount:0
+2022-12-08 10:48:14.480804 [info] : Client[6](127.0.0.1:52879) in, userCount:1
+2022-12-08 10:48:14.480881 [info] : Client[6] in!
+2022-12-08 10:48:14.481929 [info] : Client[6] quit!
+2022-12-08 10:48:14.481997 [info] : Client[6](127.0.0.1:52879) quit, UserCount:0
+2022-12-08 10:48:14.546240 [info] : Client[6](127.0.0.1:53903) in, userCount:1
+2022-12-08 10:48:14.546392 [info] : Client[6] in!
+2022-12-08 10:48:14.547519 [info] : Client[6] quit!
+2022-12-08 10:48:14.547636 [info] : Client[6](127.0.0.1:53903) quit, UserCount:0
+2022-12-08 10:48:15.373833 [info] : Client[6](127.0.0.1:54927) in, userCount:1
+2022-12-08 10:48:15.374022 [info] : Client[6] in!
+2022-12-08 10:48:15.375040 [info] : Client[6] quit!
+2022-12-08 10:48:15.375137 [info] : Client[6](127.0.0.1:54927) quit, UserCount:0
+2022-12-08 10:48:15.711749 [info] : Client[6](127.0.0.1:55951) in, userCount:1
+2022-12-08 10:48:15.711934 [info] : Client[6] in!
+2022-12-08 10:48:15.712933 [info] : Client[6] quit!
+2022-12-08 10:48:15.713024 [info] : Client[6](127.0.0.1:55951) quit, UserCount:0
+2022-12-08 10:48:15.837471 [info] : Client[6](127.0.0.1:56975) in, userCount:1
+2022-12-08 10:48:15.837558 [info] : Client[6] in!
+2022-12-08 10:48:15.838487 [info] : Client[6] quit!
+2022-12-08 10:48:15.838527 [info] : Client[6](127.0.0.1:56975) quit, UserCount:0
+2022-12-08 10:48:15.915779 [info] : Client[6](127.0.0.1:57999) in, userCount:1
+2022-12-08 10:48:15.915907 [info] : Client[6] in!
+2022-12-08 10:48:15.916886 [info] : Client[6] quit!
+2022-12-08 10:48:15.917008 [info] : Client[6](127.0.0.1:57999) quit, UserCount:0
+2022-12-08 10:48:16.042271 [info] : Client[6](127.0.0.1:59023) in, userCount:1
+2022-12-08 10:48:16.042322 [info] : Client[6] in!
+2022-12-08 10:48:16.043340 [info] : Client[6] quit!
+2022-12-08 10:48:16.043449 [info] : Client[6](127.0.0.1:59023) quit, UserCount:0
+2022-12-08 10:48:16.113282 [info] : Client[6](127.0.0.1:60047) in, userCount:1
+2022-12-08 10:48:16.113382 [info] : Client[6] in!
+2022-12-08 10:48:16.114342 [info] : Client[6] quit!

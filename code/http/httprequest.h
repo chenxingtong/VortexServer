@@ -1,21 +1,16 @@
 #ifndef HTTPREQUEST_H
 #define HTTPREQUEST_H
 
-#include <dirent.h>
 #include <errno.h>
-#include <fstream>
-#include <jsoncpp/json/json.h>
 #include <mysql/mysql.h>
 #include <regex>
-#include <stdio.h>
 #include <string>
-#include <sys/types.h>
 #include <unordered_map>
 #include <unordered_set>
 
 #include "../buffer/buffer.h"
 #include "../log/log.h"
-#include "../sql_conn_pool/sql_conn_pool.h"
+#include "../sqlconnpool/sql_conn_pool.h"
 #include "../threadpool/threadpool.h"
 
 using namespace std;
@@ -62,7 +57,6 @@ private:
 
   void parsePath();
   void parseFromUrlEncoded();
-  void parseFormData();
 
   static bool userVerify(const string& name, const string& pwd, bool isLogin);
 
@@ -72,7 +66,6 @@ private:
   size_t contentLen;
   unordered_map<string, string> header;
   unordered_map<string, string> post;
-  unordered_map<string, string> fileInfo;
 
   static const unordered_set<string> DEFAULT_HTML;
   static const unordered_map<string, int> DEFAULT_HTML_TAG;

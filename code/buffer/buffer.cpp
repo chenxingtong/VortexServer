@@ -1,10 +1,5 @@
-/*
- * @Date: 2022-10-09 20:50:07
- * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-24 15:34:12
- * @FilePath: /VortexServer/code/buffer/buffer.cpp
- */
 #include "buffer.h"
+
 using namespace std;
 
 /*
@@ -14,8 +9,7 @@ begin-read: prependable
 read-write: readable
 begin-end: writalbe
 */
-//可以将readPOs理解为分析函数的读取位置。writePos为内存的已读数据位置。
-//最开始的位置由beginPtr函数指定
+
 Buffer::Buffer(int initBuffSize) : buffer(initBuffSize), readPos(0), writePos(0) {}
 
 size_t Buffer::readableBytes() const
@@ -33,10 +27,10 @@ size_t Buffer::prependableBytes() const
   return readPos;
 }
 
-//读起点
+//写起点
 const char* Buffer::peek() const
 {
-  return beginPtr() + readPos;   //起始位置加已读位置
+  return beginPtr() + readPos;
 }
 
 //回收内存
@@ -58,7 +52,7 @@ void Buffer::retrieveAll()
   readPos = 0;
   writePos = 0;
 }
-//全部找回
+
 string Buffer::retrieveAllToStr()
 {
   string str(peek(), readableBytes());

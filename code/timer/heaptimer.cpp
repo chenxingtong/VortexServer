@@ -1,13 +1,22 @@
-/*
- * @Date: 2022-11-15 02:18:33
- * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-16 10:59:03
- * @FilePath: /VortexServer/code/timer/heaptimer.cpp
- */
 #include "heaptimer.h"
-void HeapTimer::swapNode(size_t i, size_t j)
+
+/* 数组模拟堆
+堆是一个完全二叉树，每个点都小于等于左右结点，根结点也即堆顶上全部数据的最小值（小根堆）
+如果用0号作为根结点，那么结点x的左结点是 2x+1，右结点是2x+2
+那么结点x的父结点就是 (x-1)/2
+
+swap操作：交换两个结点，同时更新哈希表内每个定时器的下标
+down操作：比左或右结点大，与左右结点的最小值交换
+up操作：比父结点小，与父结点交换
+
+我们的需求有以下几个：
+增加定时器：查哈希表，如果是新定时器，插在最后，再up，如果不是新定时器，就需要调整定时器
+调整定时器：更新定时后，再执行down和up（实际上只会执行一个）
+删除定时器：与最后一个元素交换，删除末尾元素，然后再down和up（删除任意位置结点，同样也只会执行一个）
+*/
+void HeapTimer::swapNode(int i, int j)
 {
-  size_t s = heap.size();
+  int s = heap.size();
   assert(i >= 0 && i < s);
   assert(j >= 0 && j < s);
   std::swap(heap[i], heap[j]);
@@ -15,11 +24,11 @@ void HeapTimer::swapNode(size_t i, size_t j)
   ref[heap[j].id] = j;
 }
 
-void HeapTimer::siftup(size_t i)
+void HeapTimer::siftup(int i)
 {
-  assert(i >= 0 && i < heap.size());
+  assert(i >= 0 && i < (int)heap.size());
 
-  size_t j = (i - 1) / 2;
+  int j = (i - 1) / 2;
   while (j >= 0 && heap[i] < heap[j])
   {
     swapNode(i, j);
@@ -28,11 +37,11 @@ void HeapTimer::siftup(size_t i)
   }
 }
 
-void HeapTimer::siftdown(size_t i)
+void HeapTimer::siftdown(int i)
 {
-  size_t s = heap.size();
+  int s = heap.size();
   assert(i >= 0 && i < s);
-  size_t t = i * 2 + 1;
+  int t = i * 2 + 1;
 
   while (t < s)
   {
@@ -46,7 +55,7 @@ void HeapTimer::siftdown(size_t i)
 void HeapTimer::add(int id, int timeout, const TimeoutCallBack& cb)
 {
   assert(id >= 0);
-  size_t i;
+  int i;
   if (!ref.count(id))
   {
     i = heap.size();
@@ -64,10 +73,10 @@ void HeapTimer::add(int id, int timeout, const TimeoutCallBack& cb)
   }
 }
 
-void HeapTimer::del(size_t i)
+void HeapTimer::del(int i)
 {
-  assert(!heap.empty() && i >= 0 && i < heap.size());
-  size_t n = heap.size() - 1;
+  assert(!heap.empty() && i >= 0 && i < (int)heap.size());
+  int n = heap.size() - 1;
   swapNode(i, n);
 
   ref.erase(heap.back().id);
@@ -121,7 +130,7 @@ int HeapTimer::getNextTick()
 {
   //处理堆顶计时器，若超时执行回调再删除
   tick();
-  size_t res = -1;
+  int res = -1;
   if (!heap.empty())
   {
     //计算现在堆顶的超时时间，到期时先唤醒一次epoll，判断是否有新事件（即便已经超时）

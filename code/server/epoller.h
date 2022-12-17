@@ -1,17 +1,19 @@
 /*
  * @Date: 2022-11-15 00:51:22
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-15 00:53:22
+ * @LastEditTime: 2022-12-08 08:01:32
  * @FilePath: /VortexServer/code/server/epoller.h
  */
 #ifndef EPOLLER_H
 #define EPOLLER_H
+
 #include <assert.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <sys/epoll.h>
 #include <unistd.h>
 #include <vector>
+
 using namespace std;
 
 class Epoller
@@ -34,4 +36,5 @@ private:
 
   vector<struct epoll_event> events;
 };
+
 #endif

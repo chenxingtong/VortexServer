@@ -117,7 +117,7 @@ void HttpResponse::errorContent(Buffer& buffer, string message)
   }
   body += to_string(code) + " : " + status + "\n";
   body += "<p>" + message + "</p>";
-  body += "<hr><em>SimpleWebServer</em></body></html>";
+  body += "<hr><em>VortexServer</em></body></html>";
 
   buffer.append("Content-length: " + to_string(body.size()) + "\r\n\r\n");
   buffer.append(body);

@@ -1,26 +1,20 @@
 /*
  * @Date: 2022-10-09 09:53:27
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-13 01:41:09
- * @FilePath: /VortexServer/code/buffer/buffer.h
- */
-/*log系统完成
- * @Date: 2022-10-09 09:53:27
- * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-07 10:25:37
+ * @LastEditTime: 2022-12-08 07:56:32
  * @FilePath: /VortexServer/code/buffer/buffer.h
  */
 #ifndef BUFFER_H
 #define BUFFER_H
 
-#include <sys/uio.h>
-#include <unistd.h>
-
 #include <atomic>
 #include <cassert>
 #include <cstring>
 #include <iostream>
+#include <sys/uio.h>
+#include <unistd.h>
 #include <vector>
+
 using namespace std;
 
 class Buffer

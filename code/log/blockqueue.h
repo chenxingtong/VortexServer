@@ -1,127 +1,133 @@
-/*
- * @Date: 2022-11-03 03:40:13
- * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-03 14:35:15
- * @FilePath: /VortexServer/code/log/blockqueue.h
- */
+/* 阻塞队列
+阻塞队列作为日志缓冲区，内部封装了生产者-消费者模型
+生产者：向队列尾部插入日志信息的线程
+消费者：从队列头部取出日志信息并处理的线程
 
-/*
-阻塞队列，封装了生产者消费者模型，
- */
+因为涉及到多线程读写，使用互斥锁实现对队列的互斥访问
+同时用两个条件信号实现生产者-消费者模型
+
+需要注意的点是插入和删除时，条件变量需要配合互斥锁
+先上锁，然后在while循环内检查条件变量
+当插入一个日志时，唤醒一个消费者线程
+当处理一个日志时，唤醒一个生产者线程
+*/
 
 #ifndef BLOCKQUEUE_H
 #define BLOCKQUEUE_H
-#include <cstddef>
-#include <sys/time.h>
 
-#include <cassert>
 #include <condition_variable>
 #include <mutex>
 #include <queue>
+#include <sys/time.h>
 
 template<class T> class BlockQueue
 {
 public:
   explicit BlockQueue(size_t MaxCapacity = 1000);
+
   ~BlockQueue();
+
+  void clear();
+
+  bool empty();
+
+  bool full();
+
   void close();
 
-  //几种方法
-  void clear();
-  bool empty();
-  bool full();
   size_t size();
-  size_t capacity();   //容量
-  void flush();        //唤醒一个
+
+  size_t capacity();
+
   T front();
+
   T back();
+
   void push(const T& item);
+
   bool pop(T& item);
+
   bool pop(T& item, int timeout);
 
+  void flush();
+
 private:
-  size_t m_capacity;
-  bool isClose = false;
-  std::mutex m_mutex;
-  std::condition_variable condConsumer;
-  std::condition_variable condProducer;
   std::queue<T> que;
+
+  size_t capacity_;
+
+  std::mutex mtx;
+
+  bool isClose;
+
+  std::condition_variable condConsumer;
+
+  std::condition_variable condProducer;
 };
 
-template<class T> BlockQueue<T>::BlockQueue(size_t MaxCapacity) : m_capacity(MaxCapacity)
+
+template<class T> BlockQueue<T>::BlockQueue(size_t maxCapacity) : capacity_(maxCapacity)
 {
-  assert(MaxCapacity > 0);
+  // assert(maxCapacity > 0);
   isClose = false;
 }
+
 template<class T> BlockQueue<T>::~BlockQueue()
 {
   close();
 };
+
 template<class T> void BlockQueue<T>::close()
 {
   {
-    std::lock_guard<std::mutex> locker(m_mutex);
+    std::lock_guard<std::mutex> locker(mtx);
+    // queue不支持clear，但可以重新赋值
     que = std::queue<T>();
     isClose = true;
   }
   condProducer.notify_all();
   condConsumer.notify_all();
 };
-// 几种方法的实现
-template<class T> void BlockQueue<T>::clear()
-{
-  std::lock_guard<std::mutex> locker(m_mutex);
-  que.clear();   // queue不支持clear
-}
-
-template<class T> bool BlockQueue<T>::empty()
-{
-  std::lock_guard<std::mutex> locker(m_mutex);
-  return que.empty();
-}
-
-template<class T> size_t BlockQueue<T>::capacity()
-{
-  std::lock_guard<std::mutex> locker(m_mutex);
-  return m_capacity;
-}
-
-template<class T> size_t BlockQueue<T>::size()
-{
-  std::lock_guard<std::mutex> locker(m_mutex);
-  return que.size();
-}
-
-template<class T> bool BlockQueue<T>::full()
-{
-  //调用size函数，得到的结果大于目前的容量
-  std::lock_guard<std::mutex> locker(m_mutex);
-  return que.size() >= m_capacity;
-}
 
 template<class T> void BlockQueue<T>::flush()
 {
   condConsumer.notify_one();
 };
 
-// front and back
+template<class T> void BlockQueue<T>::clear()
+{
+  std::lock_guard<std::mutex> locker(mtx);
+  que.clear();
+}
+
 template<class T> T BlockQueue<T>::front()
 {
-  std::lock_guard<std::mutex> locker(m_mutex);
+  std::lock_guard<std::mutex> locker(mtx);
   return que.front();
 }
 
 template<class T> T BlockQueue<T>::back()
 {
-  std::lock_guard<std::mutex> locker(m_mutex);
+  std::lock_guard<std::mutex> locker(mtx);
   return que.back();
 }
 
-// push and pop
+template<class T> size_t BlockQueue<T>::size()
+{
+  std::lock_guard<std::mutex> locker(mtx);
+  return que.size();
+}
+
+template<class T> size_t BlockQueue<T>::capacity()
+{
+  std::lock_guard<std::mutex> locker(mtx);
+  return capacity_;
+}
+
 template<class T> void BlockQueue<T>::push(const T& item)
 {
-  std::unique_lock<std::mutex> locker(m_mutex);
-  while (que.size() >= capacity())
+  std::unique_lock<std::mutex> locker(mtx);
+  while (que.size() >= capacity_)
   {
     condProducer.wait(locker);
   }
@@ -129,9 +135,21 @@ template<class T> void BlockQueue<T>::push(const T& item)
   condConsumer.notify_one();
 }
 
+template<class T> bool BlockQueue<T>::empty()
+{
+  std::lock_guard<std::mutex> locker(mtx);
+  return que.empty();
+}
+
+template<class T> bool BlockQueue<T>::full()
+{
+  std::lock_guard<std::mutex> locker(mtx);
+  return que.size() >= capacity_;
+}
+
 template<class T> bool BlockQueue<T>::pop(T& item)
 {
-  std::unique_lock<std::mutex> locker(m_mutex);
+  std::unique_lock<std::mutex> locker(mtx);
   while (que.empty())
   {
     condConsumer.wait(locker);
@@ -148,7 +166,7 @@ template<class T> bool BlockQueue<T>::pop(T& item)
 
 template<class T> bool BlockQueue<T>::pop(T& item, int timeout)
 {
-  std::unique_lock<std::mutex> locker(m_mutex);
+  std::unique_lock<std::mutex> locker(mtx);
   while (que.empty())
   {
     //判断等待时间是否超过timeout
@@ -167,4 +185,4 @@ template<class T> bool BlockQueue<T>::pop(T& item, int timeout)
   return true;
 }
 
-#endif
+#endif   // BLOCKQUEUE_H

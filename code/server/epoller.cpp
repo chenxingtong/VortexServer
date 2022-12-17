@@ -1,13 +1,10 @@
 /*
  * @Date: 2022-11-15 00:54:02
  * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-15 01:16:05
+ * @LastEditTime: 2022-12-08 08:01:43
  * @FilePath: /VortexServer/code/server/epoller.cpp
  */
 #include "epoller.h"
-#include <cassert>
-#include <sys/epoll.h>
-#include <unistd.h>
 
 Epoller::Epoller(int maxEvent) : epollfd(epoll_create(512)), events(maxEvent)
 {
@@ -27,6 +24,16 @@ bool Epoller::addfd(int fd, uint32_t events)
   ev.events = events;
   return epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &ev) == 0;
 }
+
+bool Epoller::modfd(int fd, uint32_t events)
+{
+  if (fd < 0) return false;
+  epoll_event ev = {0};
+  ev.data.fd = fd;
+  ev.events = events;
+  return epoll_ctl(epollfd, EPOLL_CTL_MOD, fd, &ev) == 0;
+}
+
 bool Epoller::delfd(int fd)
 {
   if (fd < 0) return false;

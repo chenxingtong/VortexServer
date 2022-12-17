@@ -1,12 +1,3 @@
-/*
- * @Date: 2022-10-28 22:52:41
- * @LastEditors: chenxingtong 1244017825@qq.com
- * @LastEditTime: 2022-11-07 10:33:22
- * @FilePath: /VortexServer/code/log/log.cpp
- */
-
-/*异步日志是把执行线程放进阻塞队列中的，再用专门的线程去向文件写日志
-记得上锁*/
 /* 同步/异步写日志
 同步写日志：线程直接向文件内写入日志，写日志与线程业务是串行的
 异步写日志：线程先将日志放到阻塞队列中，再用专门的线程向文件内写日志
@@ -25,12 +16,12 @@ using namespace std;
 
 Log::Log()
 {
-  lineCount = 0;           //线程数默认为0
-  isAsync = false;         //异步开启为false
-  writeThread = nullptr;   //智能指针指向写函数
-  que = nullptr;           //阻塞队列的指针为空
-  today = 0;               //时间为0
-  fp = nullptr;            //日志文件指针为空
+  lineCount = 0;
+  isAsync = false;
+  writeThread = nullptr;
+  que = nullptr;
+  today = 0;
+  fp = nullptr;
 }
 
 Log::~Log()
@@ -74,7 +65,7 @@ void Log::init(int level = 1, const char* path, const char* suffix, int maxQueue
   level_ = level;
   if (maxQueueSize > 0)
   {
-    isAsync = true;   //开启异步
+    isAsync = true;
     if (!que)
     {
       //初始化阻塞队列和写日志线程
