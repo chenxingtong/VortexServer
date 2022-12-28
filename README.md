@@ -16,11 +16,54 @@
 * 其他优化：用了智能指针对锁的实现，日志等实现做出优化。
 * 用vector代替部分链表，优化缓存和epoll的实现。
 * 以上所有功能的实现再封装优化，使得逻辑更简洁。
-# 项目展示
-![01首页展示](https://user-images.githubusercontent.com/63970358/209692724-ea0d43d4-5b69-46a9-88f1-e4dccd4d4e4b.png)
+## 项目展示
+### 首页展示
+![001](https://user-images.githubusercontent.com/63970358/209744714-2a54cb48-5d57-4b42-81ae-d4b65da8797b.png)
+### 图片展示
+![002](https://user-images.githubusercontent.com/63970358/209744728-cec3272e-c882-459d-b847-89e974bd8c09.png)
+### 注册展示
+![003](https://user-images.githubusercontent.com/63970358/209744739-317c84d0-43fa-485a-8af0-c3a457826ca5.png)
+### 视频展示
+![04视频测试](https://user-images.githubusercontent.com/63970358/209744752-352a78ee-b63b-419e-b9ba-58ac9aadca20.png)
+### 并发测试
+![05测试结果](https://user-images.githubusercontent.com/63970358/209744784-68a565c9-c548-4f0f-b804-bfdb8d18c926.png)
+## 项目启动
+下载分支
+```
+git@github.com:chenxingtong/VortexServer.git
+```
+配置数据库
+```
+//创建数据库
+create database webdb;
+//创建user表
+USE webdb;
+CREATE TABLE user(
+    username char(50) NULL,
+    passwd char(50) NULL
+)ENGINE=InnoDB;
+//添加数据
+INSERT INTO user(username, passwd) VALUES('your name', 'your password');
 
-![02图片测试](https://user-images.githubusercontent.com/63970358/209692741-dc636464-bfd4-4a99-9068-f9c91ca59aed.png)
-![03注册展示](https://user-images.githubusercontent.com/63970358/209692751-85421773-018f-42d4-8b0d-e830e04fda5b.png)
+//webdb是数据库名，user是表名，需要在main函数中传入
+```
+编译
+```
+make
+./bin/VortexServer
+```
+浏览器访问
+```
+127.0.0.1:9006
+#9006是在main函数中传入的服务器监听端口
+```
+## 压力测试
+```
+cd webbench-1.5 && make
+./webbench-1.5/webbench -c 1000 -t 5 http://ip:port/
+#测试结果如上图
+```
+## 致谢
+《Linux高性能服务器编程》，游双著
+TinWebServer————https://github.com/qinguoyi/TinyWebServer
 
-![04视频测试](https://user-images.githubusercontent.com/63970358/209692763-b563f44d-fbaa-4e53-b5f1-d25ddea37356.png)
-![05测试结果](https://user-images.githubusercontent.com/63970358/209692765-a6f43977-3c57-4e83-a29f-1322d195f457.png)
